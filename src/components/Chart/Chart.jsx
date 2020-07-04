@@ -4,7 +4,7 @@ import { Line, Bar } from 'react-chartjs-2';
 
 import styles from './Chart.module.css'
 
-const Chart = () => {
+const Chart = () => { 
   const [dailyData, setDailyData] = useState([]);
 
   useEffect(() => {
@@ -20,9 +20,9 @@ const Chart = () => {
     dailyData.length
     ? (
     <Line 
-      data ={{
+      data={{
         labels: dailyData.map(({ date }) => date),
-        dataSet: [{
+        datasets: [{
           data: dailyData.map(({ confirmed }) => confirmed),
           label: 'Infected',
           borderColor: '#3333ff',
