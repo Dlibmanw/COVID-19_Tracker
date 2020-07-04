@@ -1,0 +1,10 @@
+ body{
+  background-color: rgb(250, 250, 250);
+ }
+ /* he body is being applied immediately. Container needs to be defined as a className */
+
+ .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }

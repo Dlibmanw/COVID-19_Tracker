@@ -6,7 +6,8 @@ install dependencies:
 ```
 npm install --save axios react-chartjs-2 react-countup classnames
 <!-- After save we list all of them. With the help of axios we'll make the get request to the API -->
-To start the React application on localhost port 3000 run the following command:
+
+To start the React application on port localhost 3000 run the following command:
 ```
 npm start
 ```
