@@ -19,7 +19,7 @@ const CountryPicker = ({ handleCountryChange }) => {
     // from @material-ui:
     <FormControl className={styles.formControl}>
       <NativeSelect defaultValue="" onChange={(e) => handleCountryChange(e.target.value)}>
-        <option value="global">Global</option>
+        <option value="">Global</option>
         {/* the following line will populate the drop down menu with 187 countries(options) */}
         {fetchedCountries.map((country, i) => <option key={i} value={country}>{country}</option>)}
       </NativeSelect>
