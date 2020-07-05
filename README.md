@@ -6,6 +6,7 @@ npx create-react-app ./
 install dependencies:
 ```
 npm install --save axios @material-ui/core chart.js react-chartjs-2 react-countup classnames
+```
 
 To start the React application on port localhost 3000 run the following command:
 ```
