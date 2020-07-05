@@ -7,21 +7,30 @@ import { fetchData } from './api'
 class App extends React.Component {
   // the best place to fetch the data inside the class based component is inside: componentDidMount
   state = {
-    data: {}
+    data: {}, 
+    country: '', 
   }
   async componentDidMount() {
     const fetchedData = await fetchData();
     // populating data with data:
-    this.setState({ data: fetchedData })
+    this.setState({ data: fetchedData });
   }
 
+  handleCountryChange = async (country) => {
+    const fetchedData = await fetchData(country);
+
+    console.log(fetchedData);
+
+    this.setState({ data: fetchedData, country: country })
+  }
+  
   render()  {
-    const { data } = this.state;
+    const { data, country } = this.state;
     return (
       <div className={ styles.container }>
         <Cards data={data} />
-        <CountryPicker />
-        <Chart />
+        <CountryPicker handleCountryChange={this.handleCountryChange} />
+        <Chart data={data} country={country}/>
       </div>
     )
   }

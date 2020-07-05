@@ -3,12 +3,17 @@ import axios from 'axios'
 
 const url = 'https://covid19.mathdro.id/api'
 
-export const fetchData = async () => {
+export const fetchData = async (country) => {
   // here, we are going to have an async function. We are going to deal with it using async. 
   // async deals with promises the same way '.then' and '.catch' does, but it's easier to read and write.
   // try is going to be executed if the fetch is successful, otherwise we're going to get to the catch block.
+  let changeableUrl = url; 
+
+  if(country) {
+    changeableUrl = `${url}/countries/${country}`
+  }
   try {
-    const { data: {confirmed, recovered, deaths, lastUpdate} } = await axios.get(url)
+    const { data: {confirmed, recovered, deaths, lastUpdate} } = await axios.get(changeableUrl);
     const modifiedData = {
       confirmed: confirmed,
       recovered: recovered,
@@ -17,7 +22,7 @@ export const fetchData = async () => {
     }
     return modifiedData ;
   } catch (error) {
-
+    console.log(error) 
   }
 }
 
@@ -40,8 +45,8 @@ export const fetchDailyData = async () => {
 export const fetchCountries = async () => {
   try {
     const { data: { countries }} = await axios.get(`${url}/countries`);
-    return countries.map((country) => country.name)
+    return countries.map((country) => country.name);    
    } catch (error) {
-
+    console.log(error)
   }
 }
