@@ -2,10 +2,10 @@ Create a new react up in the current folder by running the following command:
 ```
 npx create-react-app ./
 ```
+
 install dependencies:
 ```
 npm install --save axios @material-ui/core chart.js react-chartjs-2 react-countup classnames
-<!-- After save we list all of them. With the help of axios we'll make the get request to the API -->
 
 To start the React application on port localhost 3000 run the following command:
 ```
